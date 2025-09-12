@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlassWatch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/stylecarrito.css">
+</head>
+
+<body class="bg-light">
+
+<!-- HERO -->
+<section class="hero text-white text-center d-flex align-items-center justify-content-center mb-4">
+  <div class="container">
+    <h1 class="display-4">Lentes</h1>
+    <p class="lead">Los mejores lentes al mejor precio</p>
+    <a href="#productos" class="btn btn-primary btn-lg">Ver Productos</a>
+  </div>
+</section>
+
+<!-- CONTENEDOR DE PRODUCTOS -->
+<div class="container py-4" id="productos">
+  <h1 class="text-center mb-4">Nuestros Productos</h1>
+
+  <div class="row">
+    <!-- Productos -->
+    <div class="col-md-8">
+      <div class="row g-3">
+
+<!-- Card Producto 1 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="Img/aoumeur-abderrahmen-y2kAbejd7ek-unsplash.jpg" class="card-img-top" alt="Lentes">
+        <div class="card-body">
+          <h5 class="card-title">Lentes</h5>
+          <button class="btn btn-success w-100" onclick="agregarProducto('Lentes')">Comprar</button>
+        </div>
+      </div>
+    </div>
+   <!-- Card Producto 2 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="Img/alireza-heidarpour-bPMNz2Q6ekk-unsplash.jpg" class="card-img-top" alt="Lentes Negros">
+        <div class="card-body">
+          <h5 class="card-title">Lentes Negros</h5>
+          <button class="btn btn-success w-100" onclick="agregarProducto('Lentes Negros')">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card Producto 3 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="Img/vooglam-eyewear-EfsoXoctZrA-unsplash.jpg" class="card-img-top" alt="Lentes Plateados">
+        <div class="card-body">
+          <h5 class="card-title">Lentes Plateados</h5>
+          <button class="btn btn-success w-100" onclick="agregarProducto('Lentes Plateados')">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card Producto 4 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="Img/egor-komarov-BItOCAqPuUU-unsplash.jpg" class="card-img-top" alt="Lentes Unicos">
+        <div class="card-body">
+          <h5 class="card-title">Lentes Unicos</h5>
+          <button class="btn btn-success w-100" onclick="agregarProducto('Lentes Unicos')">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card Producto 5 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="Img/denis-big-yLADHGsSzho-unsplash.jpg" class="card-img-top" alt="Lentes Gucci">
+        <div class="card-body">
+          <h5 class="card-title">Lentes Gucci</h5>
+          <button class="btn btn-success w-100" onclick="agregarProducto('Lentes Gucci')">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Carrito -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-dark text-white">Carrito</div>
+        <ul class="list-group list-group-flush" id="lista-carrito">
+          <li class="list-group-item text-muted text-center">No hay productos</li>
+        </ul>
+        <div class="card-footer text-center">
+          <button class="btn btn-danger" onclick="eliminarProducto()">Eliminar último producto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="JS/carrito.js"></script>
+</body>
+</html>

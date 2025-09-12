@@ -1,0 +1,262 @@
+/* ==================== */
+/*  Reset básico        */
+/* ==================== */
+* {
+    margin: 0; /* Quita márgenes por defecto de todos los elementos */
+    padding: 0; /* Quita rellenos por defecto */
+    box-sizing: border-box; /* Hace que padding y border no sumen al ancho/alto */
+    font-family: 'Arial', sans-serif; /* Pone una fuente general en toda la página */
+}
+
+/* ==================== */
+/*  Body general        */
+/* ==================== */
+body {
+    line-height: 1.6; /* Espaciado entre líneas para que el texto sea más legible */
+    background-color: #faf6f1; /* Fondo cálido y suave */
+    color: #2c2c2c; /* Texto gris oscuro para buen contraste */
+}
+
+/* ==================== */
+/*  HEADER              */
+/* ==================== */
+.header {
+    background: linear-gradient(90deg, #3c2a21, #5c4033); /* Degradado café elegante */
+    color: white; /* Texto blanco */
+    padding: 1rem; /* Espaciado interno */
+    display: flex; /* Uso flexbox para acomodar logo y menú */
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center; /* Centra verticalmente */
+    position: fixed; /* Header fijo arriba aunque haga scroll */
+    width: 100%; /* Ocupa todo el ancho */
+    top: 0; /* Pegado al borde superior */
+    z-index: 1000; /* Queda encima de otros elementos */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra ligera para profundidad */
+}
+
+.header .logo h1 {
+    font-size: 1.7rem; /* Tamaño del título dentro del logo */
+    font-weight: bold; /* Negrita para resaltar */
+    color: #f6c453; /* Dorado cálido */
+}
+
+.nav ul {
+    list-style: none; /* Quita viñetas de la lista */
+    display: flex; /* Pone los enlaces en fila */
+}
+
+.nav ul li a {
+    color: #f6c453; /* Dorado para los enlaces */
+    text-decoration: none; /* Quita el subrayado */
+    margin-left: 2rem; /* Espacio entre enlaces */
+    font-weight: bold; /* Texto más visible */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+    transition: color 0.3s ease, transform 0.2s ease; /* Animación suave */
+}
+
+.nav ul li a:hover {
+    color: #ff9f1c; /* Naranja brillante al pasar el mouse */
+    transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+}
+
+/* ==================== */
+/*  HERO                */
+/* ==================== */
+.hero {
+    height: 100vh; /* Sección ocupa toda la altura de la pantalla */
+    background: url('https://www.w3schools.com/w3images/coffeehouse.jpg') no-repeat center center/cover; 
+    display: flex; /* Uso flexbox para centrar contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    text-align: center; /* Texto centrado */
+    padding-top: 80px; /* Espacio para que no lo tape el header fijo */
+    position: relative; /* Para el overlay */
+}
+
+.hero::after {
+    content: ""; /* Capa oscura sobre la imagen */
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); /* Oscurece la imagen para mejor contraste */
+}
+
+.hero-content {
+    position: relative; /* Para que esté encima del overlay */
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 3.2rem; /* Texto grande para título */
+    color: #f6c453; /* Dorado */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6); /* Sombra suave */
+}
+
+.hero-content p {
+    font-size: 1.3rem; /* Texto descriptivo */
+    color: white; /* Blanco para contraste */
+    margin-bottom: 1rem; /* Espacio debajo */
+}
+
+/* Botones */
+.btn {
+    display: inline-block; /* Se comporta como un botón */
+    background: linear-gradient(90deg, #e0771a, #f6c453); /* Degradado naranja-dorado */
+    color: white; /* Texto blanco */
+    padding: 0.8rem 1.8rem; /* Espaciado interno */
+    border-radius: 30px; /* Bordes redondeados */
+    text-decoration: none; /* Quita subrayado */
+    font-weight: bold; /* Negrita */
+    transition: all 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra suave */
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #ff6b6b, #ff9f1c); /* Cambia colores en hover */
+    transform: scale(1.05); /* Zoom al pasar el mouse */
+}
+
+/* ==================== */
+/*  MENÚ                */
+/* ==================== */
+.menu {
+    padding: 5rem 2rem; /* Espaciado interno grande */
+    text-align: center; /* Centra texto */
+    background: #fff8f0; /* Fondo cálido */
+}
+
+.menu h2 {
+    font-size: 2.2rem; /* Tamaño del título */
+    margin-bottom: 2rem; /* Espacio debajo del título */
+    color: #3c2a21; /* Café oscuro */
+}
+
+.menu-items {
+    display: grid; /* Uso grid para organizar platillos */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    gap: 2rem; /* Espacio entre tarjetas */
+}
+
+.menu-item {
+    background: white; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta lo que sobresalga */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación al hover */
+}
+
+.menu-item img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Ajusta imagen sin deformar */
+    transition: transform 0.4s ease; /* Zoom suave */
+}
+
+.menu-item h3 {
+    padding: 1rem; /* Espaciado interno */
+    font-size: 1.3rem; /* Tamaño del título */
+    color: #422e1b; /* Café */
+}
+
+.menu-item span {
+    color: #e0771a; /* Precio naranja */
+    font-weight: bold; /* Texto fuerte */
+    display: block; 
+    padding-bottom: 1rem; /* Espacio inferior */
+    font-size: 1.1rem; 
+}
+
+.menu-item:hover {
+    transform: translateY(-8px); /* Levanta tarjeta al hover */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* Sombra más intensa */
+}
+
+.menu-item:hover img {
+    transform: scale(1.05); /* Zoom de imagen al hover */
+}
+
+/* ==================== */
+/*  SOBRE NOSOTROS      */
+/* ==================== */
+.about {
+    padding: 4rem 2rem; /* Espaciado interno */
+    text-align: center; /* Centrado */
+    background: #f6ede3; /* Beige cálido */
+}
+
+.about h2 {
+    font-size: 2rem; /* Título más grande */
+    margin-bottom: 1.5rem; /* Espacio debajo */
+    color: #3c2a21; /* Café oscuro */
+}
+
+/* ==================== */
+/*  CONTACTO            */
+/* ==================== */
+.contact {
+    padding: 4rem 2rem; /* Espaciado interno */
+    background: #fff; /* Fondo blanco */
+    text-align: center; /* Texto centrado */
+}
+
+.contact h2 {
+    margin-bottom: 1.5rem; /* Espacio debajo del título */
+    color: #3c2a21; /* Café oscuro */
+}
+
+.contact form {
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: auto; /* Centrado horizontal */
+    display: flex; /* Flexbox para columna */
+    flex-direction: column; /* Elementos en columna */
+}
+
+.contact input,
+.contact textarea {
+    padding: 0.9rem; /* Espaciado interno */
+    margin: 0.6rem 0; /* Separación vertical */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    outline: none; /* Quita borde al enfocar */
+    transition: border 0.3s; /* Transición suave al enfocar */
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border: 1px solid #e0771a; /* Borde naranja al enfocar */
+}
+
+.contact button {
+    border: none; /* Sin borde */
+    cursor: pointer; /* Mano al pasar mouse */
+    margin-top: 1rem; 
+}
+
+/* ==================== */
+/*  FOOTER              */
+/* ==================== */
+.footer {
+    background: linear-gradient(90deg, #3c2a21, #5c4033); /* Degradado café */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centrado */
+    padding: 1rem; /* Espaciado interno */
+    font-size: 0.9rem; /* Texto más pequeño */
+}
+
+/* ==================== */
+/*  RESPONSIVE          */
+/* ==================== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Header en columna en pantallas pequeñas */
+    }
+    .nav ul {
+        flex-direction: column; /* Menú en columna */
+        align-items: center;
+    }
+    .nav ul li a {
+        margin: 0.5rem 0; /* Espaciado vertical entre enlaces */
+    }
+    .hero-content h2 {
+        font-size: 2.2rem; /* Texto más pequeño en móvil */
+    }
+}

@@ -1,0 +1,29 @@
+// Esto abre la pestaña correcta del menú cuando se hace clic
+function openMenu(evt, menuName) {
+    // Declaro variables que voy a usar
+    var i, x, tablinks;
+
+    // Obtengo todos los elementos con la clase "menu"
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+        // Oculto todas las secciones de menú para que no se vean al mismo tiempo
+    }
+
+    // Obtengo todos los botones o enlaces con la clase "tablink"
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        // A cada uno le quito la clase "w3-red" (que seguramente era el estilo activo en W3CSS)
+        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+
+    // Ahora muestro la sección de menú que corresponde al nombre que recibí en la función
+    document.getElementById(menuName).style.display = "block";
+
+    // Y al botón en el que hice clic le agrego la clase "w3-red" para marcarlo como activo
+    evt.currentTarget.firstElementChild.className += " w3-red"; 
+}
+
+// Esto abre la pestaña "Eat" por defecto cuando carga la página
+document.getElementById("defaultOpen").click(); 
+// Simulo un clic automático en el elemento con id "defaultOpen" para que siempre se muestre algo de inicio
